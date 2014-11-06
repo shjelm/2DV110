@@ -1,0 +1,9 @@
+package src.tests;
+
+public class TestA {
+
+	public TestA(Object object) {
+		throw new IllegalArgumentException();
+	}
+	
+}
