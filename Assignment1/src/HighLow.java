@@ -1,9 +1,8 @@
 
 public class HighLow {
 
-	public HighLow(Object object) {
-		if(object == null || object.equals(Integer.valueOf(-9)) 
-				|| object.equals(Integer.valueOf(101))){
+	public HighLow(int number) {
+		if(number < 0 || number > 100){
 			throw new IllegalArgumentException();
 		}
 	}
