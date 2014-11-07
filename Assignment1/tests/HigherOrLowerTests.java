@@ -48,10 +48,12 @@ public class HigherOrLowerTests {
 		assertTrue(game.numberOfGuesses <= 10);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testNumberOfGuesses(){
 		HighLow game = buildGame();
+		int x = game.numberOfGuesses;
 		game.guess();
+		assertEquals(x+1, game.numberOfGuesses);
 	}
 
 	private HighLow buildGame() {
