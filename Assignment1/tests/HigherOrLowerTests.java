@@ -19,6 +19,9 @@ public class HigherOrLowerTests {
 		new HighLow(101);
 	}
 	
-	
+	@Test
+	public void shouldGenerateRandomNumber(){
+		assertTrue(generateRanomNumber != null);
+	}
 
 }
