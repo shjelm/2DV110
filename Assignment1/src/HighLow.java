@@ -7,4 +7,8 @@ public class HighLow {
 		}
 	}
 
+	public static int generateRandomNumber() {
+		return 1;
+	}
+
 }
