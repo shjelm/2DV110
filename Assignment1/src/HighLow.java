@@ -4,6 +4,7 @@ import java.util.Random;
 public class HighLow {
 
 	public int secretNumber;
+	public int numberOfGuesses;
 
 	public HighLow() {
 		secretNumber = generateRandomNumber();
