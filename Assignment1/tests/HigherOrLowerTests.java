@@ -23,5 +23,12 @@ public class HigherOrLowerTests {
 	public void shouldGenerateRandomNumber(){
 		assertTrue(HighLow.generateRandomNumber() != 0);
 	}
+	
+	@Test
+	public void shouldGenerateDifferentRandomNumber(){
+		int a = HighLow.generateRandomNumber();
+		int b = HighLow.generateRandomNumber();
+		assertTrue(a != b);
+	}
 
 }
