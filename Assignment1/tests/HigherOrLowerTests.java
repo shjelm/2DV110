@@ -41,6 +41,12 @@ public class HigherOrLowerTests {
 		HighLow gamey = buildGame();
 		assertTrue(gamex.secretNumber != gamey.secretNumber);
 	}
+	
+	@Test
+	public void testNumberOfGuesses(){
+		HighLow game = buildGame();
+		assertTrue(game.numberOfGuesses <= 10);
+	}
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
