@@ -7,8 +7,4 @@ public class HighLow {
 		}
 	}
 
-	public HighLow() {
-		
-	}
-
 }
