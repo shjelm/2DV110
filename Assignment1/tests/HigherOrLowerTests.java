@@ -40,7 +40,7 @@ public class HigherOrLowerTests {
 	@Test
 	public void shouldReadIntFromKeyboard(){
 		HighLow game = buildGame();
-		assertTrue(game.readInt() != null);
+		assertTrue(game.readInt() != 0);
 	}
 
 	private HighLow buildGame() {

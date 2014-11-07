@@ -15,4 +15,8 @@ public class HighLow {
 		return rand.nextInt((max-min)+1)+min;
 	}
 
+	public int readInt() {
+		return 1;
+	}
+
 }
