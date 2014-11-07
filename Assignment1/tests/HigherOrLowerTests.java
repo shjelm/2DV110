@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import javax.swing.text.Highlighter.Highlight;
+
 import org.junit.*;
 
 public class HigherOrLowerTests {
