@@ -2,7 +2,9 @@
 public class HighLow {
 
 	public HighLow(int number) {
-		throw new IllegalArgumentException();
+		if(number < 0 || number > 100){
+			throw new IllegalArgumentException();
+		}
 	}
 
 	public HighLow() {
