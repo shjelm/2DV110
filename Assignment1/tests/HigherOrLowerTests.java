@@ -7,7 +7,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void testConstructor(){		
-		new HighLow(9);
+		buildGame();
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
