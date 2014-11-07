@@ -10,6 +10,11 @@ public class HigherOrLowerTests {
 		buildGame();
 	}
 	
+	@Test
+	public void testCorrectConstructor(){		
+		new HighLow();
+	}
+	
 	@Test(expected = IllegalArgumentException.class)
 	public void testConstructorWithNegative(){		
 		new HighLow(-9);
@@ -41,7 +46,7 @@ public class HigherOrLowerTests {
 	public void shouldReadIntFromKeyboard(){
 		HighLow game = buildGame();
 		assertTrue(game.readInt() != 0);
-	}	
+	}
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow(9);
