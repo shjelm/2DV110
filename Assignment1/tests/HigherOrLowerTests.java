@@ -9,7 +9,7 @@ public class HigherOrLowerTests {
 		new HighLow(9);
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testEmptyConstructor(){		
 		new HighLow();
 	}
