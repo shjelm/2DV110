@@ -10,8 +10,9 @@ public class HighLow {
 	}
 
 	public static int generateRandomNumber() {
+		int min = 1, max = 100;
 		Random rand = new Random();
-		return rand.nextInt();
+		return rand.nextInt((max-min)+1)+min;
 	}
 
 }
