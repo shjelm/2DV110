@@ -11,21 +11,6 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void testCorrectConstructor(){		
-		new HighLow();
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testConstructorWithNegative(){		
-		new HighLow(-9);
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testConstructorWithTooHigh(){		
-		new HighLow(101);
-	}
-	
-	@Test
 	public void shouldGenerateRandomNumber(){
 		assertTrue(HighLow.generateRandomNumber() > 0);
 	}
@@ -49,7 +34,7 @@ public class HigherOrLowerTests {
 	}
 
 	private HighLow buildGame() {
-		HighLow hl = new HighLow(9);
+		HighLow hl = new HighLow();
 		return hl;
 	}
 }
