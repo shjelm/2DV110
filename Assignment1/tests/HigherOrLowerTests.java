@@ -32,6 +32,15 @@ public class HigherOrLowerTests {
 		HighLow game = buildGame();
 		assertTrue(game.readInt() != 0);
 	}
+	
+	@Test
+	public void shouldCheckIfEquals(){
+		HighLow game = buildGame();
+		int a = 9;
+		int b = 7;
+		assertTrue(!game.checkIfEqual());
+	}
+	
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
