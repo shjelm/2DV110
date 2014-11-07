@@ -41,14 +41,7 @@ public class HigherOrLowerTests {
 	public void shouldReadIntFromKeyboard(){
 		HighLow game = buildGame();
 		assertTrue(game.readInt() != 0);
-	}
-	
-	@Test
-	public void shouldReadDifferentInt(){
-		HighLow game = buildGame();
-		assertTrue(game.readInt() != game.readInt());
-	}
-	
+	}	
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow(9);
