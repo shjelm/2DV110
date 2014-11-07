@@ -52,9 +52,10 @@ public class HigherOrLowerTests {
 	public void testNumberOfGuesses(){
 		HighLow game = buildGame();
 		int x = game.numberOfGuesses;
-		game.guess();
+		game.checkIfEqualToSecretNumber(x);
 		assertEquals(x+1, game.numberOfGuesses);
 	}
+	
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();

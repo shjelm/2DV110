@@ -2,7 +2,7 @@ import java.util.Random;
 
 
 public class HighLow {
-
+	
 	public int secretNumber;
 	public int numberOfGuesses;
 
@@ -12,6 +12,7 @@ public class HighLow {
 	}
 
 	public boolean checkIfEqualToSecretNumber(int a) {
+		numberOfGuesses++;
 		if(a == secretNumber)
 			return true;
 		return false;
@@ -22,9 +23,4 @@ public class HighLow {
 		Random rand = new Random();
 		return rand.nextInt((max-min)+1)+min;
 	}
-
-	public void guess() {
-		numberOfGuesses++;
-	}
-
 }
