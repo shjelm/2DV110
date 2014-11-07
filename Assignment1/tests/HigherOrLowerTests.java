@@ -37,13 +37,13 @@ public class HigherOrLowerTests {
 	public void shouldCheckIfEquals(){
 		HighLow game = buildGame();
 		int a = 9;
-		int b = 7;
-		assertTrue(!game.checkIfEqual());
+		assertTrue(game.checkIfEqualToSecretNumber(a));
 	}
 	
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
+		hl.secretNumber = 9;
 		return hl;
 	}
 }

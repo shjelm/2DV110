@@ -3,6 +3,8 @@ import java.util.Random;
 
 public class HighLow {
 
+	public int secretNumber;
+
 	public HighLow() {
 	}
 
@@ -14,6 +16,12 @@ public class HighLow {
 
 	public int readInt() {
 		return 1;
+	}
+
+	public boolean checkIfEqualToSecretNumber(int a) {
+		if(a == secretNumber)
+			return true;
+		return false;
 	}
 
 }
