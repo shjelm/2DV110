@@ -4,7 +4,7 @@ import org.junit.*;
 
 public class HigherOrLowerTests {
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testConstructor(){		
 		new HighLow(9);
 	}
