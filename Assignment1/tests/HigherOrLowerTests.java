@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.*;
 
@@ -35,5 +36,15 @@ public class HigherOrLowerTests {
 	public void shouldGenerateRandomNumberNotHigherThan100(){
 		assertTrue(HighLow.generateRandomNumber() <= 100);
 	}
+	
+	@Test
+	public void shouldReadIntFromKeyboard(){
+		HighLow game = buildGame();
+		assertTrue(game.readInt() != null);
+	}
 
+	private HighLow buildGame() {
+		HighLow hl = new HighLow(9);
+		return hl;
+	}
 }
