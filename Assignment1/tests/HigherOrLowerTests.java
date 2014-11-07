@@ -30,5 +30,10 @@ public class HigherOrLowerTests {
 		int b = HighLow.generateRandomNumber();
 		assertTrue(a != b);
 	}
+	
+	@Test
+	public void shouldGenerateRandomNumberNotHigherThan100(){
+		assertTrue(HighLow.generateRandomNumber() <= 100);
+	}
 
 }
