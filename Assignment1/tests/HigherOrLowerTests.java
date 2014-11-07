@@ -21,7 +21,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void shouldGenerateRandomNumber(){
-		assertTrue(HighLow.generateRandomNumber() != 0);
+		assertTrue(HighLow.generateRandomNumber() != null);
 	}
 
 }
