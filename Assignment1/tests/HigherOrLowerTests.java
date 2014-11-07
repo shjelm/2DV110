@@ -9,6 +9,11 @@ public class HigherOrLowerTests {
 		new HighLow(9);
 	}
 	
+	@Test
+	public void testEmptyConstructor(){		
+		new HighLow();
+	}
+	
 	@Test(expected = IllegalArgumentException.class)
 	public void testConstructorWithNegative(){		
 		new HighLow(-9);
@@ -18,5 +23,7 @@ public class HigherOrLowerTests {
 	public void testConstructorWithTooHigh(){		
 		new HighLow(101);
 	}
+	
+	
 
 }
