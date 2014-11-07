@@ -8,6 +8,7 @@ public class HighLow {
 
 	public HighLow() {
 		secretNumber = generateRandomNumber();
+		numberOfGuesses = 0;
 	}
 
 	public boolean checkIfEqualToSecretNumber(int a) {
@@ -23,7 +24,7 @@ public class HighLow {
 	}
 
 	public void guess() {
-		throw new IllegalArgumentException();
+		numberOfGuesses++;
 	}
 
 }
