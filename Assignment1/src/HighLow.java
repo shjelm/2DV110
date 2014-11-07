@@ -1,3 +1,5 @@
+import java.util.Random;
+
 
 public class HighLow {
 
@@ -8,7 +10,8 @@ public class HighLow {
 	}
 
 	public static int generateRandomNumber() {
-		return 1;
+		Random rand = new Random();
+		return rand.nextInt();
 	}
 
 }
