@@ -9,6 +9,9 @@ public class HighLow {
 		}
 	}
 
+	public HighLow() {
+	}
+
 	public static int generateRandomNumber() {
 		int min = 1, max = 100;
 		Random rand = new Random();
