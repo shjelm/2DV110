@@ -22,4 +22,8 @@ public class HighLow {
 		return rand.nextInt((max-min)+1)+min;
 	}
 
+	public void guess() {
+		throw new IllegalArgumentException();
+	}
+
 }
