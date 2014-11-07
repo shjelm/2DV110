@@ -6,6 +6,7 @@ public class HighLow {
 	public int secretNumber;
 
 	public HighLow() {
+		secretNumber = generateRandomNumber();
 	}
 
 	public static int generateRandomNumber() {
