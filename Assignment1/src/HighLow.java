@@ -15,10 +15,6 @@ public class HighLow {
 		return rand.nextInt((max-min)+1)+min;
 	}
 
-	public int readInt() {
-		return 1;
-	}
-
 	public boolean checkIfEqualToSecretNumber(int a) {
 		if(a == secretNumber)
 			return true;

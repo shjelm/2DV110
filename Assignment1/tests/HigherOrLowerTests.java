@@ -28,12 +28,6 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void shouldReadIntFromKeyboard(){
-		HighLow game = buildGame();
-		assertTrue(game.readInt() != 0);
-	}
-	
-	@Test
 	public void shouldCheckIfEquals(){
 		HighLow game = buildGame();
 		int a = 9;
