@@ -76,7 +76,7 @@ public class HigherOrLowerTests {
 	}
 
 	@Test
-	public void testIfInRange(){
+	public void testIfInRangeHigh(){
 		HighLow game = buildGame();
 		
 		assertFalse(game.inRange(101));
