@@ -66,6 +66,14 @@ public class HigherOrLowerTests {
 		
 		assertTrue(game.checkIfTooLow(5));
 	}
+	
+	@Test
+	public void testIfGuessIsTooHigh(){
+		HighLow game = buildGame();
+		game.secretNumber = 9;
+		
+		assertTrue(game.checkIfTooHigh(15));
+	}
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
