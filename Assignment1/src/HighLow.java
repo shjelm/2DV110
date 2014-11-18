@@ -30,4 +30,10 @@ public class HighLow {
 		return false;
 	}
 
+	public boolean checkIfTooHigh(int i) {
+		if(i > secretNumber)
+			return true;
+		return false;
+	}
+
 }
