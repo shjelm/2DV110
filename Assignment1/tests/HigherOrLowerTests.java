@@ -75,6 +75,13 @@ public class HigherOrLowerTests {
 		assertTrue(game.checkIfTooHigh(15));
 	}
 
+	@Test
+	public void testIfInRange(){
+		HighLow game = buildGame();
+		
+		assertFalse(game.inRange(101));
+	}
+	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
 		return hl;
