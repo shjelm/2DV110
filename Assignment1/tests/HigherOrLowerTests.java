@@ -4,6 +4,7 @@ import static org.mockito.Mockito.*;
 import javax.swing.text.Highlighter.Highlight;
 
 import org.junit.*;
+import org.mockito.Mockito;
 
 public class HigherOrLowerTests {
 	
@@ -56,6 +57,13 @@ public class HigherOrLowerTests {
 		int x = game.numberOfGuesses;
 		game.checkIfEqualToSecretNumber(x);
 		assertEquals(x+1, game.numberOfGuesses);
+	}
+	
+	@Test
+	public void testMainMethod(){
+		HighLow hg = Mockito.mock(HighLow.class);
+		hg.main();
+		Mockito.verify(hg).main();
 	}
 
 	private HighLow buildGame() {
