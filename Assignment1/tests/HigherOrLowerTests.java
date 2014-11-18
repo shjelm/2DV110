@@ -58,6 +58,16 @@ public class HigherOrLowerTests {
 		game.checkIfEqualToSecretNumber(x);
 		assertEquals(x+1, game.numberOfGuesses);
 	}
+	
+	@Test
+	public void testIfGuessIsTooLow(){
+		HighLow mock = Mockito.mock(HighLow.class);
+		mock.secretNumber = 9;
+		
+		HighLow game = buildGame();
+		
+		assertTrue(game.checkIfTooLow(5));
+	}
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
