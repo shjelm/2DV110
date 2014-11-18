@@ -5,6 +5,10 @@ public class HighLow {
 	
 	public int secretNumber;
 	public int numberOfGuesses;
+	
+	public static void main(String[] args){
+		
+	}
 
 	public HighLow() {
 		secretNumber = generateRandomNumber();
@@ -23,4 +27,5 @@ public class HighLow {
 		Random rand = new Random();
 		return rand.nextInt((max-min)+1)+min;
 	}
+
 }

@@ -59,11 +59,11 @@ public class HigherOrLowerTests {
 		assertEquals(x+1, game.numberOfGuesses);
 	}
 	
-	@Test
+	@Test 
 	public void testMainMethod(){
 		HighLow hg = Mockito.mock(HighLow.class);
-		hg.main();
-		Mockito.verify(hg).main();
+		hg.main(null);
+		Mockito.verify(hg).main(null);
 	}
 
 	private HighLow buildGame() {
