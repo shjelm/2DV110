@@ -57,13 +57,6 @@ public class HigherOrLowerTests {
 		game.checkIfEqualToSecretNumber(x);
 		assertEquals(x+1, game.numberOfGuesses);
 	}
-	
-	@Test
-	public void testRunGame(){
-		HighLow game = buildGame();
-		game.runGame();
-	}
-	
 
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();

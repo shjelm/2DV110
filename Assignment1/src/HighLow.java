@@ -23,8 +23,4 @@ public class HighLow {
 		Random rand = new Random();
 		return rand.nextInt((max-min)+1)+min;
 	}
-
-	public void runGame() {
-		
-	}
 }
