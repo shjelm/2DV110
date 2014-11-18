@@ -37,7 +37,7 @@ public class HighLow {
 	}
 
 	public boolean inRange(int i) {
-		if(i > 100)
+		if(i > 100 || i < 0)
 			return false;
 		return true;
 	}
