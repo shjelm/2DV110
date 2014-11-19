@@ -99,14 +99,12 @@ public class HigherOrLowerTests {
 	@Test
 	public void shouldReturnLowString(){
 		HighLow game = buildGame();
-		game.secretNumber = 9;
 		assertEquals("Too low",game.tooLowStr());
 	}
 	
 	@Test
 	public void shouldReturnHighString(){
 		HighLow game = buildGame();
-		game.secretNumber = 9;
 		assertEquals("Too high",game.tooHighStr());
 	}
 	
