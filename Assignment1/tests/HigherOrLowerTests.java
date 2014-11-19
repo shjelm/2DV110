@@ -100,7 +100,7 @@ public class HigherOrLowerTests {
 	public void shouldReturnLowString(){
 		HighLow game = buildGame();
 		game.secretNumber = 9;
-		assertEquals("Too low",game.checkIfTooLow(5));
+		assertEquals("Too low",game.tooLowStr());
 	}
 	
 	

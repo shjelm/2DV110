@@ -25,8 +25,9 @@ public class HighLow {
 	}
 
 	public boolean checkIfTooLow(int i) {
-		if(i < secretNumber)
+		if(i < secretNumber){
 			return true;
+		}
 		return false;
 	}
 
