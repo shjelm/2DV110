@@ -55,7 +55,7 @@ public class HighLow {
 		if(checkIfTooHigh){
 			return "Too high";
 		}
-		return null;
+		return "Too low";
 	}
 
 }
