@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class HighLow {
@@ -48,6 +49,10 @@ public class HighLow {
 			return "Too high";
 		}
 		return "Too low";
+	}
+
+	public Object readInt() {
+		return 1;
 	}
 
 }
