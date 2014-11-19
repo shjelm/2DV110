@@ -43,4 +43,8 @@ public class HighLow {
 		return true;
 	}
 
+	public String tooLowStr() {
+		return "Too low";
+	}
+
 }
