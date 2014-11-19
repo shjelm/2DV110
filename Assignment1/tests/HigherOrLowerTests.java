@@ -112,7 +112,6 @@ public class HigherOrLowerTests {
 		
 	}
 	
-	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
 		return hl;
