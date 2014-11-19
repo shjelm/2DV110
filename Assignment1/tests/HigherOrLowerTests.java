@@ -97,18 +97,6 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void shouldReturnLowString(){
-		HighLow game = buildGame();
-		assertEquals("Too low",game.tooLowStr());
-	}
-	
-	@Test
-	public void shouldReturnHighString(){
-		HighLow game = buildGame();
-		assertEquals("Too high",game.tooHighStr());
-	}
-	
-	@Test
 	public void shouldReturnGuessStringHigh(){
 		HighLow game = buildGame();
 		game.secretNumber = 9;

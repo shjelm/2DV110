@@ -43,14 +43,6 @@ public class HighLow {
 		return true;
 	}
 
-	public String tooLowStr() {
-		return "Too low";
-	}
-
-	public String tooHighStr() {
-		return "Too high";
-	}
-
 	public String getString(boolean checkIfTooHigh) {
 		if(checkIfTooHigh){
 			return "Too high";
