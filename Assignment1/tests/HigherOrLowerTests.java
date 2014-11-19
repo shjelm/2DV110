@@ -96,6 +96,14 @@ public class HigherOrLowerTests {
 		assertFalse(game.inRange(0));
 	}
 	
+	@Test
+	public void shouldReturnLowString(){
+		HighLow game = buildGame();
+		game.secretNumber = 9;
+		assertEquals("Too low",game.checkIfTooLow(5));
+	}
+	
+	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
 		return hl;
