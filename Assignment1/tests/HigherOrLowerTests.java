@@ -112,6 +112,13 @@ public class HigherOrLowerTests {
 		
 	}
 	
+	@Test
+	public void shouldReadInteger(){
+		HighLow game = buildGame();
+		assertTrue(game.readInt() != null);
+		
+	}
+	
 	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
