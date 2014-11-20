@@ -129,16 +129,6 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void parseInt(){
-		HighLow game = buildGame();
-		
-		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(5);
-		
-		assertEquals(5, game.parseInt(in));
-	}
-	
-	@Test
 	public void shouldReturnStr() {
 		PrintStream out = mock(PrintStream.class);
 		when(out.toString()).thenReturn("foo");
