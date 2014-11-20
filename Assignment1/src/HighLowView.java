@@ -18,4 +18,8 @@ public class HighLowView {
 	public int readInt() throws IOException {		
 		return this.in.read();
 	}
+
+	public String getStr() {
+		return this.out.toString();
+	}
 }

@@ -136,12 +136,12 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void shouldPrintLowStr() {
+	public void shouldReturnStr() {
 		PrintStream out = mock(PrintStream.class);
 		when(out.toString()).thenReturn("foo");
 		
 		HighLowView view = new HighLowView(null, out);
-		assertEquals(1, view.getLowStr());
+		assertEquals("foo",view.getStr());
 		
 	}
 	
