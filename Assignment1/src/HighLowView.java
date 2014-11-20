@@ -1,11 +1,16 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 
 public class HighLowView {
 	InputStream in;
 	PrintStream out;
+	
+	public HighLowView(){
+		this.in = System.in;
+	}
 
 	public HighLowView(InputStream in, PrintStream out){
 		if(in == null && out == null){
@@ -15,7 +20,7 @@ public class HighLowView {
 		this.out = out;
 	}
 
-	public int readInt() throws IOException {		
+	public int readInt() throws IOException {
 		return this.in.read();
 	}
 

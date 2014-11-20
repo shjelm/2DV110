@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -130,7 +131,8 @@ public class HigherOrLowerTests {
 		
 		HighLowView view = new HighLowView(null, out);
 		assertEquals("foo",view.getStr());		
-	}	
+	}
+	
 	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();

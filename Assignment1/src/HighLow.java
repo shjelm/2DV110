@@ -5,7 +5,7 @@ public class HighLow {
 	
 	public int secretNumber;
 	public int numberOfGuesses;
-
+	
 	public HighLow() {
 		secretNumber = generateRandomNumber();
 		numberOfGuesses = 0;
