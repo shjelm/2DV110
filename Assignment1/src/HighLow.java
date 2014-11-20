@@ -45,8 +45,20 @@ public class HighLow {
 		return true;
 	}
 
-	public void runGame() {
-		
+	public void runGame(int i) {
+		if(inRange(i)){
+			if(checkIfEqualToSecretNumber(i)){
+				
+			}
+			else{
+				if(checkIfTooHigh(i)){
+					
+				}
+				else{
+					
+				}
+			}
+		}
 		
 	}
 

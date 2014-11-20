@@ -133,21 +133,8 @@ public class HigherOrLowerTests {
 	public void runGame(){
 		HighLow game = mock(HighLow.class);
 		
-		game.runGame();
-		verify(game).runGame();
-		
-	}
-	
-	@Test
-	public void runGameCorrect(){
-		HighLow game = mock(HighLow.class);		
-		
-		game.runGame();
-		verify(game).checkIfEqualToSecretNumber(9);
-		verify(game).checkIfTooHigh(9);
-		verify(game).inRange(9);
-		verify(game).generateRandomNumber();
-		verify(game).runGame();
+		game.runGame(9);
+		verify(game).runGame(9);
 		
 	}
 	
