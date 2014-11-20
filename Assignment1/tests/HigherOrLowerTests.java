@@ -138,6 +138,19 @@ public class HigherOrLowerTests {
 		
 	}
 	
+	@Test
+	public void runGameCorrect(){
+		HighLow game = Mockito.spy(new HighLow());
+		int x = 9;
+		
+		game.runGame(x);
+		verify(game).checkIfEqualToSecretNumber(x);
+		verify(game).checkIfTooHigh(x);
+		verify(game).inRange(x);
+		verify(game).runGame(x);
+		
+	}
+	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
 		return hl;
