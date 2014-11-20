@@ -137,6 +137,16 @@ public class HigherOrLowerTests {
 		assertEquals("foo",view.getStr());		
 	}
 	
+	@Test
+	public void runGameCorrectGuess(){
+		HighLow game = mock(HighLow.class);
+		
+		game.secretNumber = 9;
+		
+		game.runGame();
+		verify(game).runGame();
+		
+	}
 	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
