@@ -78,14 +78,6 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void testIfGuessIsTooLow(){
-		HighLow game = buildGame();
-		game.secretNumber = 9;
-		
-		assertTrue(game.checkIfTooLow(5));
-	}
-	
-	@Test
 	public void testIfGuessIsTooHigh(){
 		HighLow game = buildGame();
 		game.secretNumber = 9;
@@ -138,10 +130,8 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void runGameCorrectGuess(){
+	public void runGame(){
 		HighLow game = mock(HighLow.class);
-		
-		game.secretNumber = 9;
 		
 		game.runGame();
 		verify(game).runGame();

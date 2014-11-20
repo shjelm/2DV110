@@ -33,13 +33,6 @@ public class HighLow {
 		return rand.nextInt((max-min)+1)+min;
 	}
 
-	public boolean checkIfTooLow(int i) {
-		if(i < secretNumber){
-			return true;
-		}
-		return false;
-	}
-
 	public boolean checkIfTooHigh(int i) {
 		if(i > secretNumber)
 			return true;
