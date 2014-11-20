@@ -2,6 +2,9 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 import javax.swing.text.Highlighter.Highlight;
@@ -121,6 +124,16 @@ public class HigherOrLowerTests {
 	@Test(expected = IllegalArgumentException.class)
 	public void testViewConstuctor(){
 		HighLowView v = new HighLowView(null, null);
+	}
+	
+	@Test
+	public void shouldReadInt() throws IOException{
+		InputStream in = mock(InputStream.class);
+		when(in.read()).thenReturn(1);
+		
+		HighLowView view = new HighLowView(in, null);
+		assertEquals(1, view.readInt());
+		
 	}
 	
 	private HighLow buildGame() {
