@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 
 public class HighLowView {
@@ -16,12 +15,7 @@ public class HighLowView {
 		this.out = out;
 	}
 
-	public int readInt() throws IOException {
-//		Scanner scan = new Scanner(in);
-//		System.out.println(scan.nextInt());
-//		String guess = scan.next();
-//		return guess;
-		
+	public int readInt() throws IOException {		
 		return this.in.read();
 	}
 }
