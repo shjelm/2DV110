@@ -105,22 +105,6 @@ public class HigherOrLowerTests {
 		assertFalse(game.inRange(0));
 	}
 	
-	@Test
-	public void shouldReturnGuessStringHigh(){
-		HighLow game = buildGame();
-		game.secretNumber = 9;
-		assertEquals("Too high", game.getString(game.checkIfTooHigh(13)));
-		
-	}
-	
-	@Test
-	public void shouldReturnGuessStringLow(){
-		HighLow game = buildGame();
-		game.secretNumber = 9;
-		assertEquals("Too low", game.getString(game.checkIfTooHigh(5)));
-		
-	}
-	
 	@Test(expected = IllegalArgumentException.class)
 	public void testViewConstuctor(){
 		HighLowView v = new HighLowView(null, null);
@@ -141,8 +125,7 @@ public class HigherOrLowerTests {
 		when(out.toString()).thenReturn("foo");
 		
 		HighLowView view = new HighLowView(null, out);
-		assertEquals("foo",view.getStr());
-		
+		assertEquals("foo",view.getStr());		
 	}
 	
 	

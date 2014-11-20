@@ -43,11 +43,4 @@ public class HighLow {
 		return true;
 	}
 
-	public String getString(boolean checkIfTooHigh) {
-		if(checkIfTooHigh){
-			return "Too high";
-		}
-		return "Too low";
-	}
-
 }
