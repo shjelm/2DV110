@@ -6,10 +6,6 @@ import java.io.PrintStream;
 public class HighLowView {
 	InputStream in;
 	PrintStream out;
-	
-	public HighLowView(){
-		this.in = System.in;
-	}
 
 	public HighLowView(InputStream in, PrintStream out){
 		if(in == null && out == null){

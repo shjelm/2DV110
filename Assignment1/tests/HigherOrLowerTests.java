@@ -1,10 +1,12 @@
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -118,10 +120,19 @@ public class HigherOrLowerTests {
 	@Test
 	public void shouldReadInt() throws IOException {
 		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(300);
+		when(in.read()).thenReturn(5);
 		
 		HighLowView view = new HighLowView(in, null);
-		assertEquals(300, view.readInt());
+		assertEquals(5, view.readInt());
+	}
+	
+	@Test
+	public void shouldConvertToInt() throws IOException {
+		InputStream in = mock(InputStream.class);
+		when(in.read()).thenReturn(5);
+		
+		HighLowView view = new HighLowView(in, null);
+		assertEquals(5, view.convertToInt());
 	}
 	
 	@Test
