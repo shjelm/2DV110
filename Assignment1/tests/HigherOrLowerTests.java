@@ -50,7 +50,11 @@ public class HigherOrLowerTests {
 	@Test
 	public void shouldNotEqual(){
 		HighLow gamex = buildGame();
+		gamex.secretNumber = 4;
+		
 		HighLow gamey = buildGame();
+		gamey.secretNumber = 6;
+		
 		assertTrue(gamex.secretNumber != gamey.secretNumber);
 	}
 	
@@ -126,8 +130,7 @@ public class HigherOrLowerTests {
 		
 		HighLowView view = new HighLowView(null, out);
 		assertEquals("foo",view.getStr());		
-	}
-	
+	}	
 	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
