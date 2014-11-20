@@ -1,9 +1,13 @@
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import java.io.BufferedReader;
+
 import javax.swing.text.Highlighter.Highlight;
 
+import org.hamcrest.core.IsEqual;
 import org.junit.*;
+import org.mockito.Matchers;
 import org.mockito.Mockito;
 
 public class HigherOrLowerTests {
@@ -111,6 +115,17 @@ public class HigherOrLowerTests {
 		game.secretNumber = 9;
 		assertEquals("Too low", game.getString(game.checkIfTooHigh(5)));
 		
+	}
+	
+	@Test
+	public void shouldReadInt(){
+		HighLow game = buildGame();
+		BufferedReader bufferedReader = Mockito.mock(BufferedReader.class);
+		when(bufferedReader.read()).thenReturn(1, 3);
+		
+		game.readInt(bufferedReader);
+		
+		Mockito.verify(bufferedReader).readInt(Matchers.eq(12));
 	}
 	
 	private HighLow buildGame() {
