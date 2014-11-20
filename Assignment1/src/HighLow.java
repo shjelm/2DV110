@@ -11,7 +11,7 @@ public class HighLow {
 	public static void main(String[] args) throws IOException{
 		System.out.println("Int: ");
 		HighLowView view = new HighLowView(System.in, null);
-			System.out.println(view.readInt());
+		System.out.println(Character.getNumericValue(view.readInt()));
 	}
 	
 	public HighLow() {
