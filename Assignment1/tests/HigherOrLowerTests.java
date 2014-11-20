@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.Reader;
 import java.util.Scanner;
 
 import javax.swing.text.Highlighter.Highlight;
@@ -124,15 +125,6 @@ public class HigherOrLowerTests {
 		
 		HighLowView view = new HighLowView(in, null);
 		assertEquals(5, view.readInt());
-	}
-	
-	@Test
-	public void shouldConvertToInt() throws IOException {
-		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(5);
-		
-		HighLowView view = new HighLowView(in, null);
-		assertEquals(5, view.convertToInt());
 	}
 	
 	@Test
