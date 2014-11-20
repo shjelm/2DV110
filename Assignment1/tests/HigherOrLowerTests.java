@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.io.BufferedReader;
+import java.util.Scanner;
 
 import javax.swing.text.Highlighter.Highlight;
 
@@ -117,15 +118,9 @@ public class HigherOrLowerTests {
 		
 	}
 	
-	@Test
-	public void shouldReadInt(){
-		HighLow game = buildGame();
-		BufferedReader bufferedReader = Mockito.mock(BufferedReader.class);
-		when(bufferedReader.read()).thenReturn(1, 3);
-		
-		game.readInt(bufferedReader);
-		
-		Mockito.verify(bufferedReader).readInt(Matchers.eq(12));
+	@Test(expected = IllegalArgumentException.class)
+	public void testViewConstuctor(){
+		HighLowView v = new HighLowView(null, null);
 	}
 	
 	private HighLow buildGame() {
