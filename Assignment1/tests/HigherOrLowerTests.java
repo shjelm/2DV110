@@ -10,7 +10,8 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void testConstructor(){		
-		buildGame();
+		HighLow game = buildGame();
+		assertTrue(game.getClass() == HighLow.class);
 	}
 	
 	@Test
