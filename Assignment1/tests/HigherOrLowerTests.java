@@ -151,6 +151,21 @@ public class HigherOrLowerTests {
 		
 	}
 	
+	@Test
+	public void checkViewUsed(){
+		HighLow game = Mockito.spy(new HighLow());
+		int x = 9;
+		
+		InputStream in = mock(InputStream.class);
+		when(in.read()).thenReturn(5);
+		
+		HighLowView view = new HighLowView();
+		
+		game.runGame(x);
+		verify(game).readInt();
+		verify(game).getStr();
+	}
+	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
 		return hl;
