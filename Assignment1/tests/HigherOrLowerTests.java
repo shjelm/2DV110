@@ -17,6 +17,7 @@ import org.hamcrest.core.IsEqual;
 import org.junit.*;
 import org.mockito.Matchers;
 import org.mockito.Mockito;
+import org.mockito.internal.configuration.injection.scanner.MockScanner;
 
 public class HigherOrLowerTests {
 	
@@ -125,6 +126,17 @@ public class HigherOrLowerTests {
 		
 		HighLowView view = new HighLowView(in, null);
 		assertEquals(5, view.readInt());
+	}
+	
+	@Test
+	public void getInt() throws IOException{
+		InputStream in = mock(InputStream.class);
+		when(in.read()).thenReturn(5);
+		
+		HighLowView view = new HighLowView(in, null);
+		HighLow game = buildGame();
+		
+		assertEquals(5, game.getInt(view.readInt()));
 	}
 	
 	@Test
