@@ -52,4 +52,9 @@ public class HighLow {
 		return true;
 	}
 
+	public void runGame() {
+		
+		
+	}
+
 }
