@@ -118,10 +118,10 @@ public class HigherOrLowerTests {
 	@Test
 	public void shouldReadInt() throws IOException {
 		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(1);
+		when(in.read()).thenReturn(300);
 		
 		HighLowView view = new HighLowView(in, null);
-		assertEquals(1, view.readInt());
+		assertEquals(300, view.readInt());
 	}
 	
 	@Test
