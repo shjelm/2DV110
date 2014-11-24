@@ -42,20 +42,32 @@ public class HighLow {
 		return true;
 	}
 
-	public void runGame(int i) {
+	public void runGame() {
+		int i = readInt();
 		if(inRange(i)){
 			if(checkIfEqualToSecretNumber(i)){
 				
 			}
 			else{
 				if(checkIfTooHigh(i)){
-					
+					getStr();
 				}
 				else{
-					
+					getStr();
 				}
 			}
 		}
+
+		getStr();
+	}
+
+	public int readInt() {
+		return 9;
+		
+	}
+
+	public String getStr() {
+		return "";
 		
 	}
 
