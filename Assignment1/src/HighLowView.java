@@ -1,6 +1,9 @@
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.Reader;
 
 
 public class HighLowView {
@@ -20,8 +23,7 @@ public class HighLowView {
 	}
 
 	public int readInt() throws IOException {
-		int i = this.in.read();
-		return i; 
+		return this.in.read(); 
 	}
 
 	public String getStr() {
