@@ -217,7 +217,7 @@ public class HigherOrLowerTests {
 		game.numberOfGuesses = 8;
 		
 		game.runGame();
-		verify(game).readInt();
+		verify(game, times(2)).readInt();
 		verify(game, times(2)).getTooHighStr();
 	}
 	

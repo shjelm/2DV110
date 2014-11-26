@@ -55,8 +55,9 @@ public class HighLow {
 	}
 
 	public void runGame() throws IOException{
-		int i = readInt();
 		while(canMakeGuess()){
+			System.out.println("Provide an integer between 1 and 100.");
+			int i = readInt();
 			if(inRange(i)){
 				if(checkIfEqualToSecretNumber(i)){
 					System.out.println(getCorrectStr());
