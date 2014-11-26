@@ -91,4 +91,8 @@ public class HighLow {
 		return "Guess not in range [1-100]";
 	}
 
+	public String getCorrectStr() {
+		return "Correct!";
+	}
+
 }
