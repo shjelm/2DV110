@@ -20,7 +20,8 @@ public class HighLowView {
 	}
 
 	public int readInt() throws IOException {
-		return this.in.read(); 
+		int i = this.in.read();
+		return i; 
 	}
 
 	public String getStr() {

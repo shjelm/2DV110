@@ -125,7 +125,7 @@ public class HigherOrLowerTests {
 	public void shouldReadInt() throws IOException {
 		
 		HighLowView view = buildView();
-		assertEquals(5, view.readInt());
+		assertEquals(15, view.readInt());
 	}
 	
 	@Test
@@ -258,7 +258,7 @@ public class HigherOrLowerTests {
 	
 	private HighLowView buildView() throws IOException{
 		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(5);
+		when(in.read()).thenReturn(15);
 		
 		PrintStream out = mock(PrintStream.class);
 		when(out.toString()).thenReturn("foo");
