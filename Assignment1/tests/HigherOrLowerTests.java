@@ -163,7 +163,7 @@ public class HigherOrLowerTests {
 		
 		game.runGame();
 		verify(game).readInt();
-		verify(game, times(2)).getStr();
+		verify(game).getTooHighStr();
 	}
 	
 	@Test

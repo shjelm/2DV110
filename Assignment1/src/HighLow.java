@@ -61,24 +61,22 @@ public class HighLow {
 			}
 			else{
 				if(checkIfTooHigh(i)){
-					getStr();
+					getTooHighStr();
 				}
 				else{
-					getStr();
+					getTooLowStr();
 				}
 			}
 		}
+		else{
 
-		getStr();
+			getNotInRangeStr();
+		}
 	}
 
 	public int readInt() throws IOException {
 		return view.readInt();
 		
-	}
-
-	public String getStr() {
-		return view.getStr();
 	}
 
 	public String getTooLowStr() {
@@ -87,6 +85,10 @@ public class HighLow {
 
 	public String getTooHighStr() {
 		return "Too high!";
+	}
+
+	public String getNotInRangeStr() {
+		return "Guess not in range [1-100]";
 	}
 
 }
