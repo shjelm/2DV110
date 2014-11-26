@@ -99,10 +99,10 @@ public class HighLow {
 	}
 
 	public boolean canMakeGuess() {
-//		if(numberOfGuesses < MAX_GUESSES){
+		if(numberOfGuesses < MAX_GUESSES){
 			return true;
-//		}
-//		return false;
+		}
+		return false;
 	}
 
 }
