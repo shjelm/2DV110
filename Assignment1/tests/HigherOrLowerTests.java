@@ -153,6 +153,21 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
+	public void runGameCorrectGuess() throws IOException{
+		HighLowView v = buildView();
+		HighLow game = Mockito.spy(new HighLow(v));
+		int x = game.readInt();
+		game.secretNumber = x;
+		
+		game.runGame();
+		verify(game).checkIfEqualToSecretNumber(x);
+		verify(game).inRange(x);
+		verify(game).runGame();
+		verify(game).getCorrectStr();
+		
+	}
+	
+	@Test
 	public void checkViewUsed() throws IOException{
 		HighLowView v = buildView();
 		HighLow game = Mockito.spy(new HighLow(v));
