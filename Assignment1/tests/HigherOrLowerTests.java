@@ -77,6 +77,8 @@ public class HigherOrLowerTests {
 		assertEquals(x+1, game.numberOfGuesses);
 	}
 	
+	
+	
 	@Test
 	public void testIfGuessIsTooHigh(){
 		HighLow game = buildGame();
