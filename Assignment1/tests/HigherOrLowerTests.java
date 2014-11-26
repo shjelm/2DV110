@@ -172,6 +172,13 @@ public class HigherOrLowerTests {
 		assertTrue(!game.getStr().equals(""));
 	}
 	
+	@Test
+	public void checkHintTooLow() throws IOException{
+		HighLow game = buildGameWithView();
+		assertTrue(game.getStr().equals("Too low!"));
+	}
+	
+	/** Privata hjälpmetoder**/
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
 		return hl;
