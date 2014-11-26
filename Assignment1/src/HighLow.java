@@ -57,7 +57,7 @@ public class HighLow {
 		int i = readInt();
 		if(inRange(i)){
 			if(checkIfEqualToSecretNumber(i)){
-				
+				getCorrectStr();
 			}
 			else{
 				if(checkIfTooHigh(i)){
