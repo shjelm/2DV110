@@ -81,11 +81,11 @@ public class HighLow {
 		return view.getStr();
 	}
 
-	public String getToLowStr() {
+	public String getTooLowStr() {
 		return "Too low!";
 	}
 
-	public String getToHighStr() {
+	public String getTooHighStr() {
 		return "Too high!";
 	}
 

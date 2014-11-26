@@ -167,21 +167,15 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void checkInstructionsGiven() throws IOException{
-		HighLow game = buildGameWithView();
-		assertTrue(!game.getStr().equals(""));
-	}
-	
-	@Test
 	public void checkHintTooLow() throws IOException{
 		HighLow game = buildGameWithView();
-		assertTrue(game.getToLowStr().equals("Too low!"));
+		assertTrue(game.getTooLowStr().equals("Too low!"));
 	}
 	
 	@Test
 	public void checkHintTooHgih() throws IOException{
 		HighLow game = buildGameWithView();
-		assertTrue(game.getToHighStr().equals("Too high!"));
+		assertTrue(game.getTooHighStr().equals("Too high!"));
 	}
 	
 	/** Privata hjälpmetoder**/
