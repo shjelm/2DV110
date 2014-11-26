@@ -178,6 +178,12 @@ public class HigherOrLowerTests {
 		assertTrue(game.getToLowStr().equals("Too low!"));
 	}
 	
+	@Test
+	public void checkHintTooHgih() throws IOException{
+		HighLow game = buildGameWithView();
+		assertTrue(game.getToHighStr().equals("Too high!"));
+	}
+	
 	/** Privata hjälpmetoder**/
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
