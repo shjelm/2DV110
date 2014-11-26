@@ -235,7 +235,7 @@ public class HigherOrLowerTests {
 		HighLow game = buildGameWithView();
 		int x = 9;
 		game.checkIfEqualToSecretNumber(x);
-		assertTrue(game.getNrOfGuesses().equals(1));
+		assertTrue(game.getNrOfGuesses() == 1);
 	}
 	
 	

@@ -105,4 +105,8 @@ public class HighLow {
 		return false;
 	}
 
+	public int getNrOfGuesses() {
+		return numberOfGuesses;
+	}
+
 }
