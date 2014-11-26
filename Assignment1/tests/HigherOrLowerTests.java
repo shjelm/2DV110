@@ -164,6 +164,12 @@ public class HigherOrLowerTests {
 		verify(game, times(2)).getStr();
 	}
 	
+	@Test
+	public void checkInstructionsGiven(){
+		HighLow game = buildGame();
+		assert(game.getStr() != "");
+	}
+	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
 		return hl;
