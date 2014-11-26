@@ -85,4 +85,8 @@ public class HighLow {
 		return "Too low!";
 	}
 
+	public String getToHighStr() {
+		return "Too high!";
+	}
+
 }
