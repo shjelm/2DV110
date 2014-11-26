@@ -123,19 +123,15 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void shouldReadInt() throws IOException {
-		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(5);
 		
-		HighLowView view = new HighLowView(in, null);
+		HighLowView view = buildView();
 		assertEquals(5, view.readInt());
 	}
 	
 	@Test
-	public void shouldReturnStr() {
-		PrintStream out = mock(PrintStream.class);
-		when(out.toString()).thenReturn("foo");
+	public void shouldReturnStr() throws IOException {
 		
-		HighLowView view = new HighLowView(null, out);
+		HighLowView view = buildView();
 		assertEquals("foo",view.getStr());		
 	}
 	
