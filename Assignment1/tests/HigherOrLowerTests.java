@@ -193,6 +193,16 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
+	public void makeGuessMultiple() throws IOException{
+		HighLowView v = buildView();
+		HighLow game = Mockito.spy(new HighLow(v));
+		
+		game.runGame();
+		verify(game, times(2)).canMakeGuess();
+		
+	}
+	
+	@Test
 	public void checkViewUsed() throws IOException{
 		HighLowView v = buildView();
 		HighLow game = Mockito.spy(new HighLow(v));
