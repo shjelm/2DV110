@@ -12,8 +12,8 @@ public class HighLow {
 //		System.out.println("Int: ");
 //		HighLowView view = new HighLowView(System.in, null);
 //		System.out.println(Character.getNumericValue(view.readInt()));
-//		HighLow hg = new HighLow();
-//		hg.runGame();
+		HighLow hg = new HighLow();
+		hg.runGame();
 		
 	}
 	
