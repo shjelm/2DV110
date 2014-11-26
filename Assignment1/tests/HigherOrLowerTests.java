@@ -77,7 +77,15 @@ public class HigherOrLowerTests {
 		assertEquals(x+1, game.numberOfGuesses);
 	}
 	
-	
+	@Test
+	public void testTooManyGuesses(){
+		HighLow game = buildGame();
+		int x = game.numberOfGuesses;
+		for(int i = 0; i < 11; i++){
+			game.checkIfEqualToSecretNumber(x);
+		}
+		assertFalse(game.canMakeGuess());
+	}
 	
 	@Test
 	public void testIfGuessIsTooHigh(){
