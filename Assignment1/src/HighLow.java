@@ -81,4 +81,8 @@ public class HighLow {
 		return view.getStr();
 	}
 
+	public String getToLowStr() {
+		return "Too low!";
+	}
+
 }
