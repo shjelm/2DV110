@@ -118,7 +118,7 @@ public class HigherOrLowerTests {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testViewConstuctor(){
-		HighLowView v = new HighLowView(null, null);
+		new HighLowView(null, null);
 	}
 	
 	@Test
