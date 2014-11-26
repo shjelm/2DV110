@@ -184,6 +184,12 @@ public class HigherOrLowerTests {
 		assertTrue(game.getNotInRangeStr().equals("Guess not in range [1-100]"));
 	}
 	
+	@Test
+	public void checkCorrectStr() throws IOException{
+		HighLow game = buildGameWithView();
+		assertTrue(game.getCorrectStr().equals("Correct!"));
+	}
+	
 	/** Privata hjälpmetoder**/
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
