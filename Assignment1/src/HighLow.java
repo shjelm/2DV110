@@ -14,7 +14,7 @@ public class HighLow {
 //		System.out.println(Character.getNumericValue(view.readInt()));
 //		HighLow hg = new HighLow();
 //		hg.runGame();
-		
+//		
 //	}
 	
 	public HighLow() {
@@ -59,20 +59,20 @@ public class HighLow {
 		if(canMakeGuess()){
 			if(inRange(i)){
 				if(checkIfEqualToSecretNumber(i)){
-					getCorrectStr();
+					System.out.println(getCorrectStr());
 				}
 				else{
 					if(checkIfTooHigh(i)){
-						getTooHighStr();
+						System.out.println(getTooHighStr());
 					}
 					else{
-						getTooLowStr();
+						System.out.println(getTooLowStr());
 					}
 				}
 			}
 			else{
 	
-				getNotInRangeStr();
+				System.out.println(getNotInRangeStr());
 			}
 		}
 	}
