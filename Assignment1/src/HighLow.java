@@ -5,16 +5,21 @@ public class HighLow {
 	
 	public int secretNumber;
 	public int numberOfGuesses;
+	private HighLowView view;
 
-//	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException{
 //		System.out.println("Int: ");
 //		HighLowView view = new HighLowView(System.in, null);
 //		System.out.println(Character.getNumericValue(view.readInt()));
-//	}
+//		HighLow hg = new HighLow();
+//		hg.runGame();
+		
+	}
 	
 	public HighLow() {
 		secretNumber = generateRandomNumber();
 		numberOfGuesses = 0;
+		view = new HighLowView(System.in, null);
 	}
 
 	public boolean checkIfEqualToSecretNumber(int a) {
@@ -42,8 +47,8 @@ public class HighLow {
 		return true;
 	}
 
-	public void runGame() {
-		int i = readInt();
+	public void runGame() throws IOException {
+		int i = view.readInt();
 		if(inRange(i)){
 			if(checkIfEqualToSecretNumber(i)){
 				
