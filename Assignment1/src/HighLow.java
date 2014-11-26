@@ -47,8 +47,8 @@ public class HighLow {
 		return true;
 	}
 
-	public void runGame() throws IOException {
-		int i = view.readInt();
+	public void runGame() throws IOException{
+		int i = readInt();
 		if(inRange(i)){
 			if(checkIfEqualToSecretNumber(i)){
 				
@@ -66,8 +66,8 @@ public class HighLow {
 		getStr();
 	}
 
-	public int readInt() {
-		return 9;
+	public int readInt() throws IOException {
+		return view.readInt();
 		
 	}
 
