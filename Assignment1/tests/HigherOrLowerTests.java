@@ -153,6 +153,21 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
+	public void runGameCorrectWay() throws IOException{
+		HighLowView v = buildView();
+		HighLow game = Mockito.spy(new HighLow(v));
+		int x = game.readInt();
+		
+		game.runGame();
+		verify(game).checkIfEqualToSecretNumber(x);
+		verify(game).checkIfTooHigh(x);
+		verify(game).inRange(x);
+		verify(game).canMakeGuess();
+		verify(game).runGame();
+		
+	}
+	
+	@Test
 	public void runGameCorrectGuess() throws IOException{
 		HighLowView v = buildView();
 		HighLow game = Mockito.spy(new HighLow(v));
@@ -204,6 +219,7 @@ public class HigherOrLowerTests {
 		HighLow game = buildGameWithView();
 		assertTrue(game.getCorrectStr().equals("Correct!"));
 	}
+	
 	
 	/** Privata hjälpmetoder**/
 	private HighLow buildGame() {
