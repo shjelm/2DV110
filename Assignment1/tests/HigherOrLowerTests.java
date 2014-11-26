@@ -140,7 +140,8 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void runGameCorrect() throws IOException{
-		HighLow game = Mockito.spy(new HighLow());
+		HighLowView v = buildView();
+		HighLow game = Mockito.spy(new HighLow(v));
 		int x = game.readInt();
 		
 		game.runGame();
@@ -153,7 +154,8 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void checkViewUsed() throws IOException{
-		HighLow game = Mockito.spy(new HighLow());
+		HighLowView v = buildView();
+		HighLow game = Mockito.spy(new HighLow(v));
 		game.secretNumber= 1;
 		
 		InputStream in = mock(InputStream.class);
@@ -165,13 +167,32 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void checkInstructionsGiven(){
-		HighLow game = buildGame();
-		assert(game.getStr() != "");
+	public void checkInstructionsGiven() throws IOException{
+		HighLow game = buildGameWithView();
+		assertTrue(!game.getStr().equals(""));
 	}
 	
 	private HighLow buildGame() {
 		HighLow hl = new HighLow();
+		return hl;
+	}
+	
+	private HighLowView buildView() throws IOException{
+		InputStream in = mock(InputStream.class);
+		when(in.read()).thenReturn(5);
+		
+		PrintStream out = mock(PrintStream.class);
+		when(out.toString()).thenReturn("foo");
+		
+		HighLowView v = new HighLowView(in,out);
+		
+		return v;
+	}
+	
+	private HighLow buildGameWithView() throws IOException {
+		
+		HighLowView v = buildView();
+		HighLow hl = new HighLow(v);
 		return hl;
 	}
 }

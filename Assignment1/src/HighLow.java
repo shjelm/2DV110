@@ -19,7 +19,13 @@ public class HighLow {
 	public HighLow() {
 		secretNumber = generateRandomNumber();
 		numberOfGuesses = 0;
-		view = new HighLowView(System.in, null);
+		view = new HighLowView();
+	}
+	
+	public HighLow(HighLowView v) {
+		secretNumber = generateRandomNumber();
+		numberOfGuesses = 0;
+		view = v;
 	}
 
 	public boolean checkIfEqualToSecretNumber(int a) {
@@ -72,8 +78,7 @@ public class HighLow {
 	}
 
 	public String getStr() {
-		return "";
-		
+		return view.getStr();
 	}
 
 }
