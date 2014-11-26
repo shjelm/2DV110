@@ -17,11 +17,10 @@ public class HighLowView {
 
 	public HighLowView() {
 		this.in = System.in;
-		this.out = System.out; 
 	}
 
 	public int readInt() throws IOException {
-		return this.in.read();
+		return this.in.read(); 
 	}
 
 	public String getStr() {

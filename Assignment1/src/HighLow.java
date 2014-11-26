@@ -8,14 +8,14 @@ public class HighLow {
 	public int numberOfGuesses;
 	private HighLowView view;
 
-//	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException{
 //		System.out.println("Int: ");
 //		HighLowView view = new HighLowView(System.in, null);
 //		System.out.println(Character.getNumericValue(view.readInt()));
 //		HighLow hg = new HighLow();
 //		hg.runGame();
-//		
-//	}
+		
+	}
 	
 	public HighLow() {
 		secretNumber = generateRandomNumber();
@@ -56,8 +56,10 @@ public class HighLow {
 
 	public void runGame() throws IOException{
 		while(canMakeGuess()){
+			
 			System.out.println("Provide an integer between 1 and 100.");
 			int i = readInt();
+			
 			if(inRange(i)){
 				if(checkIfEqualToSecretNumber(i)){
 					System.out.println(getCorrectStr());
