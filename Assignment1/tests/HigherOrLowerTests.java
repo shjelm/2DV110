@@ -230,6 +230,14 @@ public class HigherOrLowerTests {
 		assertTrue(game.getCorrectStr().equals("Correct!"));
 	}
 	
+	@Test
+	public void checkNumberOfGuesses() throws IOException{
+		HighLow game = buildGameWithView();
+		int x = 9;
+		game.checkIfEqualToSecretNumber(x);
+		assertTrue(game.getNrOfGuesses().equals(1));
+	}
+	
 	
 	/** Privata hjälpmetoder**/
 	private HighLow buildGame() {
