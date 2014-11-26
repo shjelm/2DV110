@@ -6,11 +6,11 @@ public class HighLow {
 	public int secretNumber;
 	public int numberOfGuesses;
 
-	public static void main(String[] args) throws IOException{
-		System.out.println("Int: ");
-		HighLowView view = new HighLowView(System.in, null);
-		System.out.println(Character.getNumericValue(view.readInt()));
-	}
+//	public static void main(String[] args) throws IOException{
+//		System.out.println("Int: ");
+//		HighLowView view = new HighLowView(System.in, null);
+//		System.out.println(Character.getNumericValue(view.readInt()));
+//	}
 	
 	public HighLow() {
 		secretNumber = generateRandomNumber();
