@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class HighLow {
 	
+	private static final int MAX_GUESSES = 10;
 	public int secretNumber;
 	public int numberOfGuesses;
 	private HighLowView view;
@@ -55,22 +56,24 @@ public class HighLow {
 
 	public void runGame() throws IOException{
 		int i = readInt();
-		if(inRange(i)){
-			if(checkIfEqualToSecretNumber(i)){
-				getCorrectStr();
-			}
-			else{
-				if(checkIfTooHigh(i)){
-					getTooHighStr();
+		if(canMakeGuess()){
+			if(inRange(i)){
+				if(checkIfEqualToSecretNumber(i)){
+					getCorrectStr();
 				}
 				else{
-					getTooLowStr();
+					if(checkIfTooHigh(i)){
+						getTooHighStr();
+					}
+					else{
+						getTooLowStr();
+					}
 				}
 			}
-		}
-		else{
-
-			getNotInRangeStr();
+			else{
+	
+				getNotInRangeStr();
+			}
 		}
 	}
 
@@ -93,6 +96,13 @@ public class HighLow {
 
 	public String getCorrectStr() {
 		return "Correct!";
+	}
+
+	public boolean canMakeGuess() {
+		if(numberOfGuesses < MAX_GUESSES){
+			return true;
+		}
+		return false;
 	}
 
 }
