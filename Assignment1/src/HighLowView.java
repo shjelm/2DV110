@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.Reader;
+import java.util.Scanner;
 
 
 public class HighLowView {
@@ -23,8 +24,17 @@ public class HighLowView {
 	}
 
 	public int readInt() throws IOException {
-		return this.in.read(); 
+		Scanner scan = new Scanner(this.in);
+		int x = 0;
+		if (scan.hasNext()) {
+			x = scan.nextInt();
+		}
+		else{
+			x = this.in.read();
+		}
+		return x;
 	}
+		
 
 	public String getStr() {
 		return this.out.toString();
