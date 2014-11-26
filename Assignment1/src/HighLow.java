@@ -56,10 +56,11 @@ public class HighLow {
 
 	public void runGame() throws IOException{
 		int i = readInt();
-		if(canMakeGuess()){
+		while(canMakeGuess()){
 			if(inRange(i)){
 				if(checkIfEqualToSecretNumber(i)){
 					System.out.println(getCorrectStr());
+					break;
 				}
 				else{
 					if(checkIfTooHigh(i)){

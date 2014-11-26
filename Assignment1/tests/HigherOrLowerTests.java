@@ -153,11 +153,12 @@ public class HigherOrLowerTests {
 		HighLowView v = buildView();
 		HighLow game = Mockito.spy(new HighLow(v));
 		int x = game.readInt();
+		game.numberOfGuesses = 8;
 		
 		game.runGame();
-		verify(game).checkIfEqualToSecretNumber(x);
-		verify(game).checkIfTooHigh(x);
-		verify(game).inRange(x);
+		verify(game, times(2)).checkIfEqualToSecretNumber(x);
+		verify(game, times(2)).checkIfTooHigh(x);
+		verify(game, times(2)).inRange(x);
 		verify(game).runGame();
 		
 	}
@@ -167,12 +168,13 @@ public class HigherOrLowerTests {
 		HighLowView v = buildView();
 		HighLow game = Mockito.spy(new HighLow(v));
 		int x = game.readInt();
+		game.numberOfGuesses = 8;
 		
 		game.runGame();
-		verify(game).checkIfEqualToSecretNumber(x);
-		verify(game).checkIfTooHigh(x);
-		verify(game).inRange(x);
-		verify(game).canMakeGuess();
+		verify(game, times(2)).checkIfEqualToSecretNumber(x);
+		verify(game, times(2)).checkIfTooHigh(x);
+		verify(game, times(2)).inRange(x);
+		verify(game, times(3)).canMakeGuess();
 		verify(game).runGame();
 		
 	}
@@ -196,9 +198,10 @@ public class HigherOrLowerTests {
 	public void makeGuessMultiple() throws IOException{
 		HighLowView v = buildView();
 		HighLow game = Mockito.spy(new HighLow(v));
+		game.numberOfGuesses = 8;
 		
 		game.runGame();
-		verify(game, times(2)).canMakeGuess();
+		verify(game, times(3)).canMakeGuess();
 		
 	}
 	
@@ -211,9 +214,11 @@ public class HigherOrLowerTests {
 		InputStream in = mock(InputStream.class);
 		when(in.read()).thenReturn(5);
 		
+		game.numberOfGuesses = 8;
+		
 		game.runGame();
 		verify(game).readInt();
-		verify(game).getTooHighStr();
+		verify(game, times(2)).getTooHighStr();
 	}
 	
 	@Test
