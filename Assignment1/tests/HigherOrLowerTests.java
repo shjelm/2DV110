@@ -24,20 +24,24 @@ public class HigherOrLowerTests {
 	@Test
 	public void testConstructor(){		
 		HighLow game = buildGame();
-		assertTrue(game.getClass() == HighLow.class);
+		assertEquals(game.getClass(), HighLow.class);
 	}
 	
 	@Test
-	public void shouldGenerateRandomNumberInRange(){
-		assertTrue(HighLow.generateRandomNumber() > 0 
-				&& HighLow.generateRandomNumber() <= 100);
+	public void shouldGenerateRandomNumberInRangeHigh(){
+		assertTrue(HighLow.generateRandomNumber() <= 100);
+	}
+	
+	@Test
+	public void shouldGenerateRandomNumberInRangeLow(){
+		assertTrue(HighLow.generateRandomNumber() > 0);
 	}
 	
 	@Test
 	public void shouldGenerateDifferentRandomNumber(){
 		int a = HighLow.generateRandomNumber();
 		int b = HighLow.generateRandomNumber();
-		assertTrue(a != b);
+		assertNotEquals(a,b);
 	}
 	
 	@Test
@@ -56,7 +60,7 @@ public class HigherOrLowerTests {
 		HighLow gamey = buildGame();
 		gamey.secretNumber = 6;
 		
-		assertTrue(gamex.secretNumber != gamey.secretNumber);
+		assertNotEquals(gamex.secretNumber, gamey.secretNumber);
 	}
 	
 	@Test
@@ -110,10 +114,10 @@ public class HigherOrLowerTests {
 		assertFalse(game.inRange(0));
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testViewConstuctor() throws IOException{	
-		HighLowView v = buildView(15, "foo");
-		assertTrue(v.getClass() == HighLowView.class);
+		HighLowView v = buildView(15,"foo");
+		assertEquals(v.getClass(), HighLowView.class);
 	}
 	
 	@Test
@@ -240,7 +244,7 @@ public class HigherOrLowerTests {
 		HighLow game = buildGameWithView(15,null);
 		int x = 9;
 		game.inRange(x);
-		assertTrue(game.getNrOfGuesses() == 1);
+		assertEquals(1,game.getNrOfGuesses());
 	}
 	
 	@Test
