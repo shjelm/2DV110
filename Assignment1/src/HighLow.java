@@ -8,6 +8,11 @@ public class HighLow {
 	public int numberOfGuesses;
 	private HighLowView view;
 	
+	public static void main(String[] args){
+		HighLow hg = new HighLow();
+		hg.runGame();
+	}
+	
 	public HighLow() {
 		secretNumber = generateRandomNumber();
 		numberOfGuesses = 0;
@@ -45,36 +50,41 @@ public class HighLow {
 		return true;
 	}
 
-	public void runGame() throws IOException{
+	public void runGame() {
 		while(canMakeGuess()){
-			
-			System.out.println(getInstructionsStr());
-			int i = readInt();
 
-			if(inRange(i)){ 
-				if(checkIfEqualToSecretNumber(i)){
-					System.out.println(getCorrectStr());
-					break;
+			try {
+				System.out.println(getInstructionsStr());
+				int i;
+				i = readInt();
+
+				if(inRange(i)){ 
+					if(checkIfEqualToSecretNumber(i)){
+						System.out.println(getCorrectStr());
+						break;
+				}
+					else{
+						if(checkIfTooHigh(i)){
+							System.out.println(getTooHighStr());
+						}
+						else{
+							System.out.println(getTooLowStr());
+						}
+					}
 				}
 				else{
-					if(checkIfTooHigh(i)){
-						System.out.println(getTooHighStr());
-					}
-					else{
-						System.out.println(getTooLowStr());
-					}
+		
+					System.out.println(getNotInRangeStr());
 				}
 			}
-			else{
-	
-				System.out.println(getNotInRangeStr());
+			catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 	}
 
 	public int readInt() throws IOException {
 		return view.readInt();
-		
 	}
 
 	public String getTooLowStr() {
