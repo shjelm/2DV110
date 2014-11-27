@@ -51,7 +51,7 @@ public class HighLow {
 			System.out.println("Provide an integer between 1 and 100.");
 			int i = readInt();
 			
-			if(inRange(i)){
+			if(inRange(i)){ 
 				if(checkIfEqualToSecretNumber(i)){
 					System.out.println(getCorrectStr());
 					break;
@@ -67,7 +67,6 @@ public class HighLow {
 			}
 			else{
 	
-				System.out.println(getNotInRangeStr());
 			}
 		}
 	}

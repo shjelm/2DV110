@@ -117,21 +117,21 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testViewConstuctor(){
-		new HighLowView(null, null);
+	public void testViewConstuctor(){		
+		assertTrue(new HighLowView(null, null).getClass() == HighLowView.class);
 	}
 	
 	@Test
 	public void shouldReadInt() throws IOException {
 		
-		HighLowView view = buildView();
+		HighLowView view = buildView(15,null);
 		assertEquals(15, view.readInt());
 	}
 	
 	@Test
 	public void shouldReturnStr() throws IOException {
 		
-		HighLowView view = buildView();
+		HighLowView view = buildView(15,"foo");
 		assertEquals("foo",view.getStr());		
 	}
 	
@@ -146,7 +146,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void runGameCorrect() throws IOException{
-		HighLowView v = buildView();
+		HighLowView v = buildView(15,null);
 		HighLow game = Mockito.spy(new HighLow(v));
 		int x = game.readInt();
 		game.numberOfGuesses = 8;
@@ -161,7 +161,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void runGameCorrectWay() throws IOException{
-		HighLowView v = buildView();
+		HighLowView v = buildView(15,null);
 		HighLow game = Mockito.spy(new HighLow(v));
 		int x = game.readInt();
 		game.numberOfGuesses = 8;
@@ -177,7 +177,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void runGameCorrectGuess() throws IOException{
-		HighLowView v = buildView();
+		HighLowView v = buildView(15,null);
 		HighLow game = Mockito.spy(new HighLow(v));
 		int x = game.readInt();
 		game.secretNumber = x;
@@ -192,7 +192,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void makeGuessMultiple() throws IOException{
-		HighLowView v = buildView();
+		HighLowView v = buildView(15,null);
 		HighLow game = Mockito.spy(new HighLow(v));
 		game.numberOfGuesses = 8;
 		
@@ -203,7 +203,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void checkViewUsed() throws IOException{
-		HighLowView v = buildView();
+		HighLowView v = buildView(15,null);
 		HighLow game = Mockito.spy(new HighLow(v));
 		game.secretNumber= 1;
 		
@@ -219,34 +219,42 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void checkHintTooLow() throws IOException{
-		HighLow game = buildGameWithView();
+		HighLow game = buildGameWithView(15,null);
 		assertTrue(game.getTooLowStr().equals("Too low!"));
 	}
 	
 	@Test
 	public void checkHintTooHgih() throws IOException{
-		HighLow game = buildGameWithView();
+		HighLow game = buildGameWithView(15,null);
 		assertTrue(game.getTooHighStr().equals("Too high!"));
 	}
 	
 	@Test
 	public void checkNotInRangeStr() throws IOException{
-		HighLow game = buildGameWithView();
+		HighLow game = buildGameWithView(15,null);
 		assertTrue(game.getNotInRangeStr().equals("Guess not in range [1-100]"));
 	}
 	
 	@Test
 	public void checkCorrectStr() throws IOException{
-		HighLow game = buildGameWithView();
+		HighLow game = buildGameWithView(15,null);
 		assertTrue(game.getCorrectStr().equals("Correct!"));
 	}
 	
 	@Test
 	public void checkNumberOfGuesses() throws IOException{
-		HighLow game = buildGameWithView();
+		HighLow game = buildGameWithView(15,null);
 		int x = 9;
 		game.checkIfEqualToSecretNumber(x);
 		assertTrue(game.getNrOfGuesses() == 1);
+	}
+	
+	@Test
+	public void checkGuessNotInRange() throws IOException{
+		HighLowView v = buildView(115,null);
+		HighLow game = Mockito.spy(new HighLow(v));
+
+		verify(game, times(10)).getNotInRangeStr();
 	}
 	
 	
@@ -256,21 +264,21 @@ public class HigherOrLowerTests {
 		return hl;
 	}
 	
-	private HighLowView buildView() throws IOException{
+	private HighLowView buildView(int input, String output) throws IOException{
 		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(15);
+		when(in.read()).thenReturn(input);
 		
 		PrintStream out = mock(PrintStream.class);
-		when(out.toString()).thenReturn("foo");
+		when(out.toString()).thenReturn(output);
 		
 		HighLowView v = new HighLowView(in,out);
 		
 		return v;
 	}
 	
-	private HighLow buildGameWithView() throws IOException {
+	private HighLow buildGameWithView(int input, String output) throws IOException {
 		
-		HighLowView v = buildView();
+		HighLowView v = buildView(input, output);
 		HighLow hl = new HighLow(v);
 		return hl;
 	}
