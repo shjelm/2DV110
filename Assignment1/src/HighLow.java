@@ -21,7 +21,6 @@ public class HighLow {
 	}
 
 	public boolean checkIfEqualToSecretNumber(int a) {
-		numberOfGuesses++;
 		if(a == secretNumber)
 			return true;
 		return false;
@@ -40,6 +39,7 @@ public class HighLow {
 	}
 
 	public boolean inRange(int i) {
+		numberOfGuesses++;
 		if(i > 100 || i <= 0)
 			return false;
 		return true;
@@ -50,7 +50,7 @@ public class HighLow {
 			
 			System.out.println("Provide an integer between 1 and 100.");
 			int i = readInt();
-			
+
 			if(inRange(i)){ 
 				if(checkIfEqualToSecretNumber(i)){
 					System.out.println(getCorrectStr());
@@ -67,6 +67,7 @@ public class HighLow {
 			}
 			else{
 	
+				System.out.println(getNotInRangeStr());
 			}
 		}
 	}

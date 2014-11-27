@@ -73,7 +73,7 @@ public class HigherOrLowerTests {
 	public void testNumberOfGuesses(){
 		HighLow game = buildGame();
 		int x = game.numberOfGuesses;
-		game.checkIfEqualToSecretNumber(x);
+		game.inRange(x);
 		assertEquals(x+1, game.numberOfGuesses);
 	}
 	
@@ -82,7 +82,7 @@ public class HigherOrLowerTests {
 		HighLow game = buildGame();
 		int x = game.numberOfGuesses;
 		for(int i = 0; i < 11; i++){
-			game.checkIfEqualToSecretNumber(x);
+			game.inRange(x);
 		}
 		assertFalse(game.canMakeGuess());
 	}
@@ -245,7 +245,7 @@ public class HigherOrLowerTests {
 	public void checkNumberOfGuesses() throws IOException{
 		HighLow game = buildGameWithView(15,null);
 		int x = 9;
-		game.checkIfEqualToSecretNumber(x);
+		game.inRange(x);
 		assertTrue(game.getNrOfGuesses() == 1);
 	}
 	
@@ -253,7 +253,8 @@ public class HigherOrLowerTests {
 	public void checkGuessNotInRange() throws IOException{
 		HighLowView v = buildView(115,null);
 		HighLow game = Mockito.spy(new HighLow(v));
-
+		
+		game.runGame();
 		verify(game, times(10)).getNotInRangeStr();
 	}
 	
