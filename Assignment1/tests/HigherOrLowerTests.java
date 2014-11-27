@@ -92,11 +92,21 @@ public class HigherOrLowerTests {
 	}
 
 	@Test
-	public void testIfInRange(){
+	public void testIfInRangeHigh(){
 		HighLow game = buildGame();
 		
 		assertFalse(game.inRange(101));
+	}
+	@Test
+	public void testIfInRangeLow(){
+		HighLow game = buildGame();
+		
 		assertFalse(game.inRange(-5));
+	}
+	@Test
+	public void testIfInRangeZero(){
+		HighLow game = buildGame();
+		
 		assertFalse(game.inRange(0));
 	}
 	
