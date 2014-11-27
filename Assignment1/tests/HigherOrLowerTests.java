@@ -95,9 +95,9 @@ public class HigherOrLowerTests {
 	public void testIfInRange(){
 		HighLow game = buildGame();
 		
-		assertFalse(game.inRange(101) 
-				&& game.inRange(-5) 
-				&& game.inRange(0));
+		assertFalse(game.inRange(101));
+		assertFalse(game.inRange(-5));
+		assertFalse(game.inRange(0));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
