@@ -38,7 +38,7 @@ public class HighLow {
 		return false;
 	}
 
-	public boolean inRange(int i) {
+	public boolean inRange(int i) { 
 		numberOfGuesses++;
 		if(i > 100 || i <= 0)
 			return false;
@@ -48,7 +48,6 @@ public class HighLow {
 	public void runGame() throws IOException{
 		while(canMakeGuess()){
 			
-			System.out.println("Provide an integer between 1 and 100.");
 			int i = readInt();
 
 			if(inRange(i)){ 

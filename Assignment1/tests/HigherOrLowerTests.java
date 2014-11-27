@@ -28,8 +28,9 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void shouldGenerateRandomNumber(){
-		assertTrue(HighLow.generateRandomNumber() > 0);
+	public void shouldGenerateRandomNumberInRange(){
+		assertTrue(HighLow.generateRandomNumber() > 0 
+				&& HighLow.generateRandomNumber() <= 100);
 	}
 	
 	@Test
@@ -37,11 +38,6 @@ public class HigherOrLowerTests {
 		int a = HighLow.generateRandomNumber();
 		int b = HighLow.generateRandomNumber();
 		assertTrue(a != b);
-	}
-	
-	@Test
-	public void shouldGenerateRandomNumberNotHigherThan100(){
-		assertTrue(HighLow.generateRandomNumber() <= 100);
 	}
 	
 	@Test
@@ -96,24 +92,12 @@ public class HigherOrLowerTests {
 	}
 
 	@Test
-	public void testIfInRangeHigh(){
+	public void testIfInRange(){
 		HighLow game = buildGame();
 		
-		assertFalse(game.inRange(101));
-	}
-	
-	@Test
-	public void testIfInRangeLow(){
-		HighLow game = buildGame();
-		
-		assertFalse(game.inRange(-5));
-	}
-	
-	@Test
-	public void testIfInRangeZero(){
-		HighLow game = buildGame();
-		
-		assertFalse(game.inRange(0));
+		assertFalse(game.inRange(101) 
+				&& game.inRange(-5) 
+				&& game.inRange(0));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -124,8 +108,8 @@ public class HigherOrLowerTests {
 	@Test
 	public void shouldReadInt() throws IOException {
 		
-		HighLowView view = buildView(15,null);
-		assertEquals(15, view.readInt());
+		HighLowView view = buildView(23,null);
+		assertEquals(23, view.readInt());
 	}
 	
 	@Test
@@ -145,22 +129,7 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
-	public void runGameCorrect() throws IOException{
-		HighLowView v = buildView(15,null);
-		HighLow game = Mockito.spy(new HighLow(v));
-		int x = game.readInt();
-		game.numberOfGuesses = 8;
-		
-		game.runGame();
-		verify(game, times(2)).checkIfEqualToSecretNumber(x);
-		verify(game, times(2)).checkIfTooHigh(x);
-		verify(game, times(2)).inRange(x);
-		verify(game).runGame();
-		
-	}
-	
-	@Test
-	public void runGameCorrectWay() throws IOException{
+	public void runGameVerification() throws IOException{
 		HighLowView v = buildView(15,null);
 		HighLow game = Mockito.spy(new HighLow(v));
 		int x = game.readInt();
@@ -185,8 +154,8 @@ public class HigherOrLowerTests {
 		game.runGame();
 		verify(game).checkIfEqualToSecretNumber(x);
 		verify(game).inRange(x);
-		verify(game).runGame();
 		verify(game).getCorrectStr();
+		verify(game).runGame();
 		
 	}
 	
@@ -203,12 +172,9 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void checkViewUsed() throws IOException{
-		HighLowView v = buildView(15,null);
+		HighLowView v = buildView(5,null);
 		HighLow game = Mockito.spy(new HighLow(v));
 		game.secretNumber= 1;
-		
-		InputStream in = mock(InputStream.class);
-		when(in.read()).thenReturn(5);
 		
 		game.numberOfGuesses = 8;
 		
