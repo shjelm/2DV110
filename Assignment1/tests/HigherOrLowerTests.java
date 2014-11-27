@@ -129,6 +129,16 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
+	public void getInstructions() throws IOException{
+		HighLow game = mock(HighLow.class);
+		
+		game.runGame();
+		verify(game, times(10)).getInstructionsStr();
+		verify(game).runGame();
+		
+	}
+	
+	@Test
 	public void runGameVerification() throws IOException{
 		HighLowView v = buildView(15,null);
 		HighLow game = Mockito.spy(new HighLow(v));
