@@ -48,6 +48,7 @@ public class HighLow {
 	public void runGame() throws IOException{
 		while(canMakeGuess()){
 			
+			System.out.println(getInstructionsStr());
 			int i = readInt();
 
 			if(inRange(i)){ 
