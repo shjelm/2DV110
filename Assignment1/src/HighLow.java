@@ -103,4 +103,8 @@ public class HighLow {
 		return numberOfGuesses;
 	}
 
+	public String getInstructionsStr() {
+		return "Provide an integer between 1 and 100: ";
+	}
+
 }
