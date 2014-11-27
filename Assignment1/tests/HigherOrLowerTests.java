@@ -202,6 +202,12 @@ public class HigherOrLowerTests {
 	}
 	
 	@Test
+	public void checkGetInstructions() throws IOException{
+		HighLow game = buildGameWithView(15,null);
+		assertTrue(game.getInstructionsStr().equals("Provide an integer between 1 and 100: "));
+	}
+	
+	@Test
 	public void checkCorrectStr() throws IOException{
 		HighLow game = buildGameWithView(15,null);
 		assertTrue(game.getCorrectStr().equals("Correct!"));
