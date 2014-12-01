@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -13,11 +14,19 @@ import java.util.Scanner;
 
 import javax.swing.text.Highlighter.Highlight;
 
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.Is;
 import org.hamcrest.core.IsEqual;
+import org.hamcrest.core.IsNot;
 import org.junit.*;
 import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.internal.configuration.injection.scanner.MockScanner;
+import org.mockito.internal.matchers.CompareEqual;
+import org.mockito.internal.matchers.GreaterOrEqual;
+import org.mockito.internal.matchers.GreaterThan;
+import org.mockito.internal.matchers.LessOrEqual;
+import org.mockito.internal.matchers.LessThan;
 
 public class HigherOrLowerTests {
 	
@@ -29,12 +38,12 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void shouldGenerateRandomNumberInRangeHigh(){
-		assertTrue(HighLow.generateRandomNumber() <= 100);
+		assertThat(HighLow.generateRandomNumber() , new LessOrEqual<>(Integer.valueOf(100)));
 	}
 	
 	@Test
 	public void shouldGenerateRandomNumberInRangeLow(){
-		assertTrue(HighLow.generateRandomNumber() > 0);
+		assertThat(HighLow.generateRandomNumber() , new GreaterOrEqual<>(Integer.valueOf(0)));
 	}
 	
 	@Test
@@ -66,7 +75,7 @@ public class HigherOrLowerTests {
 	@Test
 	public void testNumberOfGuessesTooMany(){
 		HighLow game = buildGame();
-		assertTrue(game.numberOfGuesses <= 10);
+		assertThat(game.numberOfGuesses, new LessOrEqual<>(Integer.valueOf(10)));
 	}
 	
 	@Test
