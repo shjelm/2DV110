@@ -236,7 +236,7 @@ public class HigherOrLowerTests {
 	@Test
 	public void checkCorrectStr() throws IOException{
 		HighLow game = buildGameWithView(15,null);
-		assertTrue(game.getCorrectStr().equals("Correct!"));
+		assertTrue(game.getCorrectStr().equals("Correct! After "+game.numberOfGuesses+" guesses!"));
 	}
 	
 	@Test
