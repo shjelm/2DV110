@@ -1,32 +1,15 @@
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-import static org.hamcrest.CoreMatchers.*;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
+import org.mockito.Mockito;
+import org.mockito.internal.matchers.GreaterOrEqual;
+import org.mockito.internal.matchers.LessOrEqual;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.io.Reader;
-import java.util.Scanner;
 
-import javax.swing.text.Highlighter.Highlight;
-
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.Is;
-import org.hamcrest.core.IsEqual;
-import org.hamcrest.core.IsNot;
 import org.junit.*;
-import org.mockito.Matchers;
-import org.mockito.Mockito;
-import org.mockito.internal.configuration.injection.scanner.MockScanner;
-import org.mockito.internal.matchers.CompareEqual;
-import org.mockito.internal.matchers.GreaterOrEqual;
-import org.mockito.internal.matchers.GreaterThan;
-import org.mockito.internal.matchers.LessOrEqual;
-import org.mockito.internal.matchers.LessThan;
 
 public class HigherOrLowerTests {
 	
