@@ -100,7 +100,7 @@ public class HighLow {
 	}
 
 	public String getCorrectStr() {
-		return "Correct!";
+		return "Correct! After "+numberOfGuesses+" guesses!";
 	}
 
 	public boolean canMakeGuess() {
