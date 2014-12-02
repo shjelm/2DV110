@@ -3,6 +3,7 @@ import static org.mockito.Mockito.*;
 
 import org.mockito.Mockito;
 import org.mockito.internal.matchers.GreaterOrEqual;
+import org.mockito.internal.matchers.GreaterThan;
 import org.mockito.internal.matchers.LessOrEqual;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class HigherOrLowerTests {
 	
 	@Test
 	public void shouldGenerateRandomNumberInRangeLow(){
-		assertThat(HighLow.generateRandomNumber() , new GreaterOrEqual<>(Integer.valueOf(0)));
+		assertThat(HighLow.generateRandomNumber() , new GreaterThan<>(Integer.valueOf(0)));
 	}
 	
 	@Test
