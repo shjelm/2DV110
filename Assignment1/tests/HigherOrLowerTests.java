@@ -113,6 +113,11 @@ public class HigherOrLowerTests {
 		assertEquals(v.getClass(), HighLowView.class);
 	}
 	
+	@Test (expected = IllegalArgumentException.class)
+	public void testViewConstuctorEx() throws IOException{	
+		HighLowView v = new HighLowView(null,null);
+	}
+	
 	@Test
 	public void shouldReadInt() throws IOException {
 		
